@@ -24,10 +24,12 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #007f0c, #004306);
-  --heart-core-color: #000;
+  --heart-core-color: #00cc14;
   --heart-contour-color: #00cc14;
   --heart-body-color: #00cc14;
   --heart-sparks-color: red;
+  --font-weight-normal: 465;
+  --font-weight-bold: 785;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,16 +53,16 @@
         transparent 4px
       ),
       linear-gradient(to bottom, #007f0c, #004306);
-    --heart-core-color: #000;
+    --heart-core-color: #00cc14;
     --heart-contour-color: #00cc14;
     --heart-body-color: #00cc14;
     --heart-sparks-color: red;
+    --font-weight-normal: 465;
+    --font-weight-bold: 785;
   }
 }
 
 :root.theme-light {
-  --variable-font: "Inter-Variable";
-  --default-font: "PressStart2P";
   --bg-color: #fff;
   --text-color: #000;
   --bg-image: repeating-linear-gradient(
@@ -78,6 +80,7 @@
     ),
     linear-gradient(to bottom, #e7e7e7, #1a1a1a);
   --accent-color: #000;
+  --button-text-color: #fff;
   --border-color: #000;
   --border-color-label: #fff;
   --heart-core-color: #000;
@@ -86,36 +89,4 @@
   --heart-sparks-color: red;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --variable-font: "Inter-Variable";
-  --default-font: "PressStart2P";
-  --bg-color: #fff;
-  --text-color: #000;
-  --bg-image: repeating-linear-gradient(
-      #d3d3d3,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      #d3d3d3,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
-  --accent-color: #000;
-  --border-color: #000;
-  --border-color-label: #fff;
-  --heart-core-color: #000;
-  --heart-contour-color: #000;
-  --heart-body-color: #000;
-  --heart-sparks-color: red;
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-  }
 }

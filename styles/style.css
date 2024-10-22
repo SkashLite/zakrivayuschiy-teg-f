@@ -18,7 +18,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-size: 18px;
-  font-family: var(--variable-font);
+  font-family: var(--variable-font), sans-serif;
   font-variation-settings: "wght" var(--font-weight-normal)
     var(--font-weight-bold);
   background-color: var(--bg-color);
@@ -79,8 +79,7 @@
   padding: 0 0 0 15px;
 }
 
-
-.theme-menu__button:hover {
+.theme-menu__button:is(:hover, :focus, :disabled) {
   opacity: 0.6;
 }
 
@@ -93,7 +92,6 @@
 }
 
 .theme-menu__button:disabled {
-  opacity: 0.6;
   cursor: default;
   pointer-events: none;
 }
@@ -112,13 +110,14 @@
   content: "";
   position: absolute;
   block-size: 2px;
-  inline-size: 100%;
+  inline-size: calc(100% - 15px);
   background-color: var(--accent-color);
   right: 0;
   bottom: -2px;
   transform: scale(0);
   transform-origin: left;
   transition: 0.3s ease;
+  opacity: 0.6;
 }
 
 .theme-menu__list {
@@ -148,8 +147,8 @@
   font-weight: var(--font-weight-bold);
   font-size: 18px;
   color: var(--accent-color);
-  padding: 3px 10px;
-  line-height: 140%;
+  padding: 4px 10px;
+  line-height: 22px;
 }
 
 @supports (font-variation-settings: normal) {
@@ -177,7 +176,14 @@
     1px -1px 0px var(--border-color-label);
   opacity: 0.5;
   z-index: 999;
-  font-family: var(--default-font)
+  font-family: var(--default-font);
+}
+
+@supports (-webkit-text-stroke: 1px var(--border-color-label)) {
+  .cards__card-block-image-label {
+    -webkit-text-stroke: 1px var(--border-color-label);
+    text-shadow: none;
+  }
 }
 
 .cards__card-image {
@@ -199,7 +205,6 @@
   font-weight: var(--font-weight-normal);
   line-height: 21px;
 }
-
 
 .button {
   position: relative;
@@ -244,6 +249,7 @@
 
 .button__text {
   mix-blend-mode: difference;
+  color: var(--button-text-color);
 }
 
 .like-icon {
@@ -262,7 +268,7 @@
   align-items: stretch;
   padding: 0 25px 23px 0;
   border-bottom: 0px solid var(--accent-color);
-  gap: 0;
+  gap: 5px;
 }
 
 .card__icon-button {
@@ -277,7 +283,7 @@
   filter: grayscale(80%);
 }
 
-.saturate{
+.saturate {
   filter: saturate(220%);
 }
 
@@ -297,11 +303,10 @@
   filter: hue-rotate(90deg) blur(4px) contrast(60%);
 }
 
-
 .floppy {
   width: 21px;
   mix-blend-mode: difference;
-  color: var(--accent-color)
+  color: var(--button-text-color);
 }
 
 .button-save {
@@ -325,6 +330,10 @@
   padding: 30px;
 }
 
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
 .dialog__content {
   display: flex;
   align-items: center;
@@ -337,10 +346,24 @@
 .dialog__floppy {
   width: 39px;
   flex-shrink: 0;
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .dialog__text {
   font-family: var(--default-font);
   color: var(--accent-color);
+}
+
+@media (width <= 380px) {
+  .header {
+    padding-top: 120px;
+  }
+
+  .button-save {
+    flex-direction: column;
+  }
+
+  .floppy {
+    width: 28px;
+  }
 }
