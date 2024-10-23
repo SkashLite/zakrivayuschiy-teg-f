@@ -283,6 +283,7 @@
 
 .card__icon-button:focus-visible {
   outline: none;
+  border: 2px solid var(--accent-color);
 }
 
 .grayscale {
