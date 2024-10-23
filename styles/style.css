@@ -49,7 +49,7 @@
   padding-top: 136px;
   justify-content: space-between;
   text-transform: uppercase;
-  font-family: var(--default-font);
+  font-family: var(--default-font), fantasy;
 }
 
 .header__logo {
@@ -73,7 +73,7 @@
   position: relative;
   text-transform: uppercase;
   font-size: 14px;
-  font-family: var(--default-font);
+  font-family: var(--default-font), fantasy;
   font-weight: var(--font-weight-normal);
   transition: opacity 0.3s ease;
   padding: 0 0 0 15px;
@@ -176,7 +176,7 @@
     1px -1px 0px var(--border-color-label);
   opacity: 0.5;
   z-index: 999;
-  font-family: var(--default-font);
+  font-family: var(--default-font), fantasy;
 }
 
 @supports (-webkit-text-stroke: 1px var(--border-color-label)) {
@@ -209,7 +209,7 @@
 .button {
   position: relative;
   border: 2px solid var(--accent-color);
-  font-family: var(--default-font);
+  font-family: var(--default-font), fantasy;
   font-size: 14px;
   background: var(--bg-color);
   transition: box-shadow 0.3s ease;
@@ -254,8 +254,11 @@
 
 .like-icon {
   inline-size: 39px;
-  block-size: 36px;
 }
+
+.like-icon:focus{
+  outline: none;
+} 
 
 .card__like-button {
   min-width: 130px;
@@ -267,7 +270,6 @@
   justify-content: end;
   align-items: stretch;
   padding: 0 25px 23px 0;
-  border-bottom: 0px solid var(--accent-color);
   gap: 5px;
 }
 
@@ -277,6 +279,10 @@
   background: transparent;
   cursor: pointer;
   padding: 0;
+}
+
+.card__icon-button:focus-visible {
+  outline: none;
 }
 
 .grayscale {
@@ -350,13 +356,17 @@
 }
 
 .dialog__text {
-  font-family: var(--default-font);
+  font-family: var(--default-font), fantasy;
   color: var(--accent-color);
 }
 
 @media (width <= 380px) {
   .header {
     padding-top: 120px;
+  }
+
+  .cards__card-block-image-label {
+    right: 13px;
   }
 
   .button-save {
