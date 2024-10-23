@@ -256,9 +256,9 @@
   inline-size: 39px;
 }
 
-.like-icon:focus{
+.like-icon:focus {
   outline: none;
-} 
+}
 
 .card__like-button {
   min-width: 130px;
