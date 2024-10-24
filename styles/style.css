@@ -279,6 +279,7 @@
   background: transparent;
   cursor: pointer;
   padding: 0;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -325,6 +326,7 @@
 
 .dialog__button {
   padding: 12px 132px;
+  text-transform: uppercase;
 }
 
 .dialog[open] {
@@ -359,6 +361,7 @@
 .dialog__text {
   font-family: var(--default-font), fantasy;
   color: var(--accent-color);
+  text-transform: uppercase;
 }
 
 @media (width <= 380px) {
